@@ -36,11 +36,11 @@ class omsa::repo (
         '11.2',
         '11.3': {
           zypprepo { 'dell-omsa-hwindep':
-            type         => 'rpm-md',
-            baseurl      => 'http://linux.dell.com/repo/hardware/latest/platform_independent/suse11_64/',
-            enabled      => 1,
-            autorefresh  => 0,
-            name         => 'dell-omsa-hwindep',
+            type        => 'rpm-md',
+            baseurl     => 'http://linux.dell.com/repo/hardware/latest/platform_independent/suse11_64/',
+            enabled     => 1,
+            autorefresh => 0,
+            name        => 'dell-omsa-hwindep',
           }
 
           # We place a dummy file which has an placeholder for the system device id. This is going to be replaced by Exec['replace-system-dev-id']
@@ -85,12 +85,12 @@ class omsa::repo (
       case $::lsbdistrelease {
         '12.04': {
           apt::source { 'osma':
-            location          => 'http://linux.dell.com/repo/community/ubuntu',
-            release           => 'precise',
-            repos             => 'openmanage',
-            key               => '1285491434D8786F',
-            key_server        => 'pool.sks-keyservers.net',
-            include_src       => false,
+            location    => 'http://linux.dell.com/repo/community/ubuntu',
+            release     => 'precise',
+            repos       => 'openmanage',
+            key         => '1285491434D8786F',
+            key_server  => 'pool.sks-keyservers.net',
+            include_src => false,
           }
         }
         default: {
